@@ -27,9 +27,9 @@
 						회원 관리
 					</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown">
-						<a class="dropdown-item" href="#">로그인</a>
-						<a class="dropdown-item" href="#">회원가입</a>
-						<a class="dropdown-item" href="#">로그아웃</a>
+						<a class="dropdown-item" href="userLogin.jsp">로그인</a>
+						<a class="dropdown-item" href="userJoin.jsp">회원가입</a>
+						<a class="dropdown-item" href="userLogout.jsp">로그아웃</a>
 					</div>
 				</li>
 			</ul>
@@ -52,7 +52,7 @@
 			<a class="btn btn-primary mx-1 mt-2" data-bs-toggle="modal" href="#registerModal">등록하기</a>
 			<a class="btn btn-danger mx-1 mt-2" data-bs-toggle="modal" href="#reportModal">신고</a>
 		</form>
-		<div class="card bg-light mt-3"  style="margin-bottom: 15px;">
+		<div class="card bg-light mt-3" ">
 			<div class="card-header bg-light">
 				<div class="row">
 					<div class="col-8 text-left">컴퓨터개론&nbsp;&nbsp;<small>홍도리</small></div>
@@ -62,80 +62,86 @@
 				</div>
 			</div>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title"  style="margin-bottom: 10px;">
-				그럭저럭 들었습니다. &nbsp;&nbsp; <small>(2018년 1학기)</small>
-			</h5>
-			<p5 class="card-text">수업 내용이 어려워요.</p5>
-			<div class="row">
-				<div class="col-9 text-left">
-					성적 <span style="color: red; margin-right: 10px;">C</span>
-					널널 <span style="color: red; margin-right: 10px;">A</span>
-					강의 <span style="color: red; margin-right: 10px;">C</span>
-					<span style="color: green;">(추천: 21)</span>
-				</div>
-				<div class="col-3 text-right">
-					<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=" style="text-decoration: none">추천</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=" style="text-decoration: none">삭제</a>
+		<div class="card bg-light"  style="margin-bottom: 15px;">
+			<div class="card-body">
+				<h5 class="card-title"  style="margin-bottom: 10px;">
+					그럭저럭 들었습니다. &nbsp;&nbsp; <small>(2018년 1학기)</small>
+				</h5>
+				<p class="card-text">수업 내용이 어려워요.</p>
+				<div class="row">
+					<div class="col-9 text-left">
+						성적 <span style="color: red; margin-right: 10px;">C</span>
+						널널 <span style="color: red; margin-right: 10px;">A</span>
+						강의 <span style="color: red; margin-right: 10px;">C</span>
+						<span style="color: green;">(추천: 21)</span>
+					</div>
+					<div class="col-3 text-right">
+						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=" style="text-decoration: none">추천</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=" style="text-decoration: none">삭제</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="card bg-light mt-3"  style="margin-bottom: 15px;">
+		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
-					<div class="col-8 text-left">컴퓨터개론&nbsp;&nbsp;<small>김도리</small></div>
+					<div class="col-8 text-left">컴퓨터그래픽스&nbsp;&nbsp;<small>김도리</small></div>
 					<div class="col-4 text-right">
 						종합&nbsp;<span style="color: red;">A</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title"  style="margin-bottom: 10px;">
-				정말 좋은 강의에요. &nbsp;&nbsp; <small>(2016년 겨울학기)</small>
-			</h5>
-			<p5 class="card-text">강의 구성이 알차고, 학점도 잘 나오는 좋은 강의 같습니다.</p5>
-			<div class="row">
-				<div class="col-9 text-left">
-					성적 <span style="color: red; margin-right: 10px;">A</span>
-					널널 <span style="color: red; margin-right: 10px;">A</span>
-					강의 <span style="color: red; margin-right: 10px;">B</span>
-					<span style="color: green;">(추천: 21)</span>
-				</div>
-				<div class="col-3 text-right">
-					<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=" style="text-decoration: none">추천</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=" style="text-decoration: none">삭제</a>
+		<div class="card bg-light"  style="margin-bottom: 15px;">
+			<div class="card-body">
+				<h5 class="card-title"  style="margin-bottom: 10px;">
+					정말 좋은 강의에요. &nbsp;&nbsp; <small>(2016년 겨울학기)</small>
+				</h5>
+				<p class="card-text">강의 구성이 알차고, 학점도 잘 나오는 좋은 강의 같습니다.</p>
+				<div class="row">
+					<div class="col-9 text-left">
+						성적 <span style="color: red; margin-right: 10px;">A</span>
+						널널 <span style="color: red; margin-right: 10px;">A</span>
+						강의 <span style="color: red; margin-right: 10px;">B</span>
+						<span style="color: green;">(추천: 21)</span>
+					</div>
+					<div class="col-3 text-right">
+						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=" style="text-decoration: none">추천</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=" style="text-decoration: none">삭제</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="card bg-light mt-3"  style="margin-bottom: 15px;">
+		<div class="card bg-light mt-3">
 			<div class="card-header bg-light">
 				<div class="row">
-					<div class="col-8 text-left">컴퓨터개론&nbsp;&nbsp;<small>맛도리</small></div>
+					<div class="col-8 text-left">알고리즘&nbsp;&nbsp;<small>맛도리</small></div>
 					<div class="col-4 text-right">
 						종합&nbsp;<span style="color: red;">A</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title"  style="margin-bottom: 10px;">
-				강의 추천합니다. &nbsp;&nbsp; <small>(2016년 1학기)</small>
-			</h5>
-			<p5 class="card-text">수업 너무 재밌어요!</p5>
-			<div class="row">
-				<div class="col-9 text-left">
-					성적 <span style="color: red; margin-right: 10px;">A</span>
-					널널 <span style="color: red; margin-right: 10px;">A</span>
-					강의 <span style="color: red; margin-right: 10px;">A</span>
-					<span style="color: green;">(추천: 21)</span>
-				</div>
-				<div class="col-3 text-right">
-					<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=" style="text-decoration: none">추천</a>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=" style="text-decoration: none">삭제</a>
+		<div class="card bg-light"  style="margin-bottom: 15px;">
+			<div class="card-body">
+				<h5 class="card-title"  style="margin-bottom: 10px;">
+					강의 추천합니다. &nbsp;&nbsp; <small>(2016년 1학기)</small>
+				</h5>
+				<p class="card-text">수업 너무 재밌어요!</p>
+				<div class="row">
+					<div class="col-9 text-left">
+						성적 <span style="color: red; margin-right: 10px;">A</span>
+						널널 <span style="color: red; margin-right: 10px;">A</span>
+						강의 <span style="color: red; margin-right: 10px;">A</span>
+						<span style="color: green;">(추천: 21)</span>
+					</div>
+					<div class="col-3 text-right">
+						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=" style="text-decoration: none">추천</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=" style="text-decoration: none">삭제</a>
+					</div>
 				</div>
 			</div>
 		</div>
