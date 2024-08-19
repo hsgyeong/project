@@ -39,7 +39,7 @@
 	}
 	
 	String host = "http://localhost:8080/Lecture_Evaluation/";
-	String from = "보내는 메일"; // 이메일 계정
+	String from = "email"; // 이메일 계정
 	String to = userDAO.getUserEmail(userID);
 	String subject = "강의평가를 위한 이메일 인증 메일입니다.";
 	String content = "다음 링크에 접속하여 이메일 인증을 진행하세요." +

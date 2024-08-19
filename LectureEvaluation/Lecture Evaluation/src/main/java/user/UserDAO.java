@@ -9,7 +9,6 @@ import util.DatabaseUtil;
 public class UserDAO {
 	
 	public int login(String userID, String userPassword) {
-	
 		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -51,7 +50,6 @@ public class UserDAO {
 	}
 	
 	public int join(UserDTO user) {
-		
 		String SQL = "INSERT INTO USER VALUES(?, ?, ?, ?, false)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -87,7 +85,6 @@ public class UserDAO {
 	}
 	
 	public String getUserEmail(String userID) {
-		
 		String SQL = "SELECT userEmail FROM USER WHERE userID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -123,7 +120,6 @@ public class UserDAO {
 	}
 	
 	public boolean getUserEmailChecked(String userID) {
-		
 		String SQL = "SELECT userEmailChecked FROM USER WHERE userID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -159,7 +155,6 @@ public class UserDAO {
 	}
 	
 	public boolean setUserEmailChecked(String userID) {
-		
 		String SQL = "UPDATE USER SET userEmailChecked = true WHERE userID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;

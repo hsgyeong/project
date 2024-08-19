@@ -18,7 +18,7 @@
 	if(session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
 	}
-	if(userID == null){
+	if(userID != null){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인 상태입니다.');");
@@ -78,7 +78,7 @@
 				<label>이메일</label>
 				<input type="email" name="userEmail" class="form-control">
 			</div>
-			<button type="submit" class="btn btn-primary mt-4">로그인</button>
+			<button type="submit" class="btn btn-primary mt-4">회원가입</button>
 		</form>
 	</section>
 	
