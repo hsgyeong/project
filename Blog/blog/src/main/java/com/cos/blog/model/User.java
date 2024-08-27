@@ -10,8 +10,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-// ORM -> Java (포함 다른 언어) Object -> 테이블로 매핑해주는 기술
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder // 빌더 패턴
+//ORM -> Java (포함 다른 언어) Object -> 테이블로 매핑해주는 기술
 @Entity // User 클래스가 MySQL에 테이블이 생성된다.
 public class User {
 
