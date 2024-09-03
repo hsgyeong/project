@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +35,17 @@ public class DummyControllerTest {
 	// save 함수는 id를 전달하면 해당 id에 대한 데이터가 없을때 insert
 	// email, password
 	
-	@Transactional
+	@DeleteMapping("/dummy/user/{id}")
+	public String delete(@PathVariable int id) {
+		try {
+			userRepository.deleteById(id);
+		} catch (EmptyResultDataAccessException e) {
+			return "삭제에 실패하였습니다. 존재하지 않는 ID입니다. ";
+		}
+		return "삭제되었습니다. id : " + id;
+	}
+	
+	@Transactional  // 함수 종료 시 자동 commit
 	@PutMapping("/dummy/user/{id}")					// @RequestBody JSON 데이터를 받기 위해 사용하는 어노테이션
 	public User updateUser(@PathVariable int id, @RequestBody User requestUser) { // JSON 데이터를 요청 -> Java Object MessageConverter의 Jackson 라이브러리가 변환해서 받아줌
 		System.out.println("id : " + id);
@@ -49,7 +61,7 @@ public class DummyControllerTest {
 		// userRepository.save(user);
 		
 		// 더티 체킹
-		return null;
+		return user;
 	}
 	
 	// http://localhost:8000/blog/dummy/user
@@ -79,7 +91,7 @@ public class DummyControllerTest {
 			@Override
 			public IllegalArgumentException get() {
 				// TODO Auto-generated method stub
-				return new IllegalArgumentException("해당 유저는 없습니다. id : " + id);
+				return new IllegalArgumentException("해당 사용자가 없습니다.");
 			}
 		});
 		
