@@ -2,6 +2,7 @@ package com.cos.blog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
@@ -18,5 +19,10 @@ public class UserController {
 	@GetMapping("/auth/loginForm")
 	public String loginForm() {
 		return "user/loginForm";
+	}
+	
+	@PostMapping("/logout")
+	public String logout() {
+		return "redirect : /";
 	}
 }

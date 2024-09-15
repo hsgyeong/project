@@ -14,19 +14,31 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration // bean 등록 (IoC 관리)
 @EnableWebSecurity // security 필터 등록
 @EnableMethodSecurity(prePostEnabled = true) // Method Security 활성화
-public class SecurityConfiguration {
+public class SecurityConfig {
 
-	  @Bean public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		  		http .authorizeHttpRequests(authz -> authz
-		  				.requestMatchers("/auth/**").permitAll() .anyRequest().authenticated() )
-		  				.formLogin(form -> form .loginPage("/auth/loginForm") .permitAll() )
-		  				.logout(logout -> logout .logoutSuccessUrl("/") )
+	  @Bean 
+	  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		  		http 
+		  				.authorizeHttpRequests((auth) -> auth
+		  				.requestMatchers("/", "/auth/**", "/js/**").permitAll() 
+		  				.anyRequest().authenticated() 
+		  				);
+		  		
+		  		http
+		  				.formLogin((auth) -> auth 
+		  							.loginPage("/auth/loginForm")
+		  							.defaultSuccessUrl("/") 
+		  							.permitAll() 
+		  				);
+		  		
+		  		http
+		  				.logout((auth) -> auth
+		  						.logoutSuccessUrl("/") 
+		  				);
+		  		http
 		  				.httpBasic(Customizer.withDefaults()); 
-		  				return http.build(); 
+		  				
+		  		return http.build(); 
 		  	}
 	  
-	   @Bean public WebSecurityCustomizer webSecurityCustomizer() {
-		   return (web) -> web.ignoring().requestMatchers("/auth/**");
-	   }
-	
 }
