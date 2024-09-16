@@ -21,8 +21,4 @@ public class UserController {
 		return "user/loginForm";
 	}
 	
-	@PostMapping("/logout")
-	public String logout() {
-		return "redirect : /";
-	}
 }

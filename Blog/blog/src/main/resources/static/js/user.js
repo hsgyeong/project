@@ -33,8 +33,8 @@ let index = {
 			alert(JSON.stringify(error));
 		}); 
 	},
-	
-	/*
+
+/*	
 	login: function(){
 		// alert('user의 save함수 호출');
 		let data = {
@@ -56,7 +56,7 @@ let index = {
 			alert(JSON.stringify(error));
 		}); 
 	}
-	*/
+*/
 }
 
 index.init();
