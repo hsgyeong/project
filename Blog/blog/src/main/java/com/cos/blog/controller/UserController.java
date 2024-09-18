@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 @Controller
 public class UserController {
 
@@ -18,6 +21,7 @@ public class UserController {
 	
 	@GetMapping("/auth/loginForm")
 	public String loginForm() {
+		System.out.println("login 문제");
 		return "user/loginForm";
 	}
 	
