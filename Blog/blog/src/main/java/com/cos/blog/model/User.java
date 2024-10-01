@@ -2,9 +2,7 @@ package com.cos.blog.model;
 
 import java.sql.Timestamp;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.DynamicInsert;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,19 +29,21 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // 프로젝트에서 연결된 DB의 넘버린 전략을 따라간다. 
 	private int id; // 시퀀스, auto_icrement
 	
-	@Column(nullable = false, length = 30, unique = true)
+	@Column(nullable = false, length = 100, unique = true)
 	private String username; //아이디
 	
 	@Column(nullable = false, length = 100) // 123456 -> 해쉬 (비밀번호 암호화)
 	private String password;
 	
-	@Column(nullable = false, length = 50)
+	@Column(length = 50) // 카카오에서 이메일을 받아오지 못하기 때문에 nullable=true
 	private String email;
 	
 	// @ColumnDefault("'user'")  // Enum을 쓰는 것이 좋다. -> 데이터 도메인을 만들 수 있음 // admin, user, manager
 	// DB는 RoleType이라는 것이 없다.
 	@Enumerated(EnumType.STRING)
 	private RoleType role;  // Enum 을 쓰는 것이 좋다.  // ADMIN, USER
+	
+	private String oauth; // kakao
 	
 	@CreationTimestamp // 시간 자동 입력
 	private Timestamp createDate;
