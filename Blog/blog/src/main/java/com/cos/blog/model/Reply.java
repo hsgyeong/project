@@ -1,8 +1,11 @@
 package com.cos.blog.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.cos.blog.dto.ReplySaveRequestDto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,5 +42,12 @@ public class Reply {
 	private User user;
 	
 	@CreationTimestamp
-	private Timestamp createDate;
+	private LocalDateTime createDate;
+
+	@Override
+	public String toString() {
+		return "Reply [id=" + id + ", content=" + content + ", board=" + board + ", user=" + user + ", createDate="
+				+ createDate + "]";
+	}
+
 }

@@ -34,8 +34,8 @@ public class UserApiController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	// @Autowired
-	// private HttpSession session;
+//	@Autowired
+//	private HttpSession session;
 	
 	@PostMapping("/auth/joinProc")
 	public ResponseDto<Integer> save(@RequestBody User user) { //username, password, email
@@ -61,15 +61,15 @@ public class UserApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	} 
 
-	// @PostMapping("/api/user/login")
-	// public ResponseDto<Integer> login(@RequestBody User user){
-	// 	System.out.println("UserApiController: login호출");
-	// 	User principal = userService.로그인(user); // 접근 주체
+//	 @PostMapping("/api/user/login")
+//	 public ResponseDto<Integer> login(@RequestBody User user){
+//	 	System.out.println("UserApiController: login호출");
+//	 	User principal = userService.로그인(user); // 접근 주체
 		
-	// 	if(principal != null) {
-	//		session.setAttribute("principal", principal);
-	// 	}
-	// 	return new ResponseDto<Integer>(HttpStatus.OK.value(),  1);
-	// }
+//	 	if(principal != null) {
+//			session.setAttribute("principal", principal);
+//	 	}
+//	 	return new ResponseDto<Integer>(HttpStatus.OK.value(),  1);
+//	 }
 		
 }
