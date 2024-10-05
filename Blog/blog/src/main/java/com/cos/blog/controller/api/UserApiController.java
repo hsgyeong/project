@@ -5,8 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,10 +37,6 @@ public class UserApiController {
 	
 	@PostMapping("/auth/joinProc")
 	public ResponseDto<Integer> save(@RequestBody User user) { //username, password, email
-		// System.out.println("UserApiController: save호출");
-		String rawPassword = user.getPassword(); // 1234 원문
-		String encPassword = passwordEncoder.encode(rawPassword); // 해쉬
-		user.setPassword(encPassword);
 		user.setRole(RoleType.USER);
 		userService.회원가입(user);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),  1); // 자바 오브젝트를 JSON으로 변환해서 리턴 (Jackson)

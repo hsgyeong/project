@@ -53,8 +53,9 @@ public class SecurityConfig {
 		return http.build(); // SecurityFilterChain 빌드
 	}
 	
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-		return authenticationConfiguration.getAuthenticationManager();
+	@Bean 
+	public AuthenticationManager authenticationManager(AuthenticationConfiguration	  authenticationConfiguration) throws Exception { 
+		return authenticationConfiguration.getAuthenticationManager(); 
 	}
+	 
 }
