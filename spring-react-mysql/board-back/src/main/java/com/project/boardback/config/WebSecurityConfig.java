@@ -1,4 +1,4 @@
-package com.project.board_back.config;
+package com.project.boardback.config;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.project.board_back.filter.JwtAuthenticationFilter;
+import com.project.boardback.filter.JwtAuthenticationFilter;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -56,8 +56,8 @@ class FailedAuthenticationEntryPoint implements AuthenticationEntryPoint {
             AuthenticationException authException) throws IOException, ServletException {
         
                 response.setContentType("application/json");
-                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                response.getWriter().write("{ \"code\": \"NP\", \"message\": \"Do not have permission.\" }");
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("{ \"code\": \"AF\", \"message\": \"Authorization Failed.\" }");
     }
     
 }

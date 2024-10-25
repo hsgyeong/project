@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./src", // 상대경로를 절대경로로 받을 수 있도록 하는 역할
     "lib": [
       "dom",
       "dom.iterable",

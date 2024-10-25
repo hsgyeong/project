@@ -1,4 +1,4 @@
-package com.project.board_back;
+package com.project.boardback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

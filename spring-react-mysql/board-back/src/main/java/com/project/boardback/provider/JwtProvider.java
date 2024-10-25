@@ -1,4 +1,4 @@
-package com.project.board_back.provider;
+package com.project.boardback.provider;
 
 import java.util.Date;
 import java.time.Instant;

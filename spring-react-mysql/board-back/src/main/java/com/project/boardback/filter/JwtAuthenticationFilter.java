@@ -1,4 +1,4 @@
-package com.project.board_back.filter;
+package com.project.boardback.filter;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.project.board_back.provider.JwtProvider;
+import com.project.boardback.provider.JwtProvider;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.project.board_back.config;
+package com.project.boardback.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
