@@ -1,11 +1,15 @@
-import BoardListItem from 'components/BoardListItem';
+import React from 'react';
 import './App.css';
+import { latestBoardListMock, top3BoardListMock } from 'mocks';
+import Top3Item from 'components/Top3Item';
 
 function App() {
   return (
-   <>
-    <BoardListItem />
-   </>
+  <>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: '24px' }}>
+      {top3BoardListMock.map(top3ListItem => <Top3Item top3ListItem={top3ListItem} />)}
+    </div>
+  </>
   );
 }
 

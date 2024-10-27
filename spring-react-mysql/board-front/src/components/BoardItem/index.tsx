@@ -2,34 +2,35 @@ import React from 'react'; // rsc : react snippet 설치하면 사용할 수 있
 import './style.css';
 import { BoardListItem } from 'types/interface';
 import { useNavigate } from 'react-router-dom';
+import defaultProfileImage from 'assets/image/default-profile-image.png';
 
 interface Props {
     boardListItem : BoardListItem
 }
 
 //          component : Board List Item 컴포넌트        //
-export default function BoardListItem({ boardListItem }: Props) {
-  
-  //          properties            //
-  const { boardNumber, title, content, boardTitleImage  } = boardListItem;  
-  const { favoriteCount, commentCount, viewCount } = boardListItem;
-  const { writeDatetime, writerNickname, writerProfileImage  } = boardListItem;
+export default function BoardItem({ boardListItem }: Props) {
 
-  //          function : 네비게이트 함수            //
-  const navigator = useNavigate();
+    //          properties            //
+    const { boardNumber, title, content, boardTitleImage  } = boardListItem;  
+    const { favoriteCount, commentCount, viewCount } = boardListItem;
+    const { writeDatetime, writerNickname, writerProfileImage  } = boardListItem;
 
-  //          event handler : 게시물 아이템 클릭 이벤트 처리 함수       //
-  const onClickHandler = () => {
-    navigator(boardNumber);
-  }
+    //          function : 네비게이트 함수            //
+ //   const navigator = useNavigate();
 
-  //          render : Board List Item 컴포넌트 렌더링       //
-  return (
+    //          event handler : 게시물 아이템 클릭 이벤트 처리 함수       //
+    const onClickHandler = () => {
+//        navigator(boardNumber);
+    }
+
+    //          render : Board List Item 컴포넌트 렌더링       //
+    return (
     <div className='board-list-item' onClick={onClickHandler}> 
         <div className='board-list-item-main-box'>
             <div className='board-list-item-top'>
                 <div className='board-list-item-profile-box'>
-                    <div className='board-list-item-profile-image' style={{ backgroundImage: `url(${writerProfileImage})` }}></div>
+                    <div className='board-list-item-profile-image' style={{ backgroundImage: `url(${writerProfileImage ? writerProfileImage : defaultProfileImage})` }}></div>
                 </div>
                 <div className='board-list-item-write-box'>
                     <div className='board-list-item-nickname'>{writerNickname}</div>
@@ -45,10 +46,10 @@ export default function BoardListItem({ boardListItem }: Props) {
             </div>
         </div>    
         {boardTitleImage !== null && ( 
-        <div className='board-list-item-image-box'>
-            <div className='board-list-item-image' style={{ backgroundImage:`url(${boardTitleImage})` }}></div>
-        </div>
+            <div className='board-list-item-image-box'>
+                <div className='board-list-item-image' style={{ backgroundImage:`url(${boardTitleImage})` }}></div>
+            </div>
         )}
     </div>
-  )
+    )
 }
