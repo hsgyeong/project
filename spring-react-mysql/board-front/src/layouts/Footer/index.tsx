@@ -4,17 +4,17 @@ import './style.css';
 //          component : footer layout           //
 export default function Footer() {
 
-  //          event handler : 인스타 아이콘 버튼 클릭 이벤트 처리       //
-  const onInstaIconButtonClickHandler = () => {
-    window.open('https://www.instagram.com');
-  }
+    //          event handler : 인스타 아이콘 버튼 클릭 이벤트 처리       //
+    const onInstaIconButtonClickHandler = () => {
+        window.open('https://www.instagram.com');
+    }
 
-  //          event handler : 네이버 블로그 아이콘 버튼 클릭 이벤트 처리       //
-  const onNaverBlogIconButtonClickHandler = () => {
-    window.open('https://blog.naver.com');
-  }
+    //          event handler : 네이버 블로그 아이콘 버튼 클릭 이벤트 처리       //
+    const onNaverBlogIconButtonClickHandler = () => {
+        window.open('https://blog.naver.com');
+    }
 
-  //          render : footer  rendering           // 
+    //          render : footer  rendering           // 
     return (
     <div id='footer'>
         <div className='footer-container'>
